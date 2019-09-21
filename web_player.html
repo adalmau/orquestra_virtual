@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ca" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Orquestra virtual</title>
+        <script type="text/javascript" src="Sound.js"></script>
+        <script type="text/javascript" src="web_player.js"></script>
+        <style media="screen">
+            body {
+                background-color: rgba(251,206,65,1);
+            }
+
+            /*Ripple*/
+            .ripple {
+                width: 10px;
+                height: 10px;
+                opacity: 0;
+                transform: scale(0);
+                background: rgba(65, 95, 251, 0.9);
+                border-radius: 50%;
+                position: fixed;
+            }
+
+            /*Animate Function*/
+            .animate {
+                animation: ripple-mo 1s cubic-bezier(0, 0, 0.2, 1);
+            }
+            @keyframes ripple-mo {
+                0% {
+                    transform: scale(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(50);
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ripple"></div>
+    </body>
+</html>

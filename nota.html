@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ca" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Nota virtual</title>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script type="text/javascript">
+            var websocket = new WebSocket("ws://localhost:8080");
+
+            websocket.onmessage = function(evt) {console.log(evt.data);};
+
+            document.addEventListener("click", function() {
+                websocket.send("do");
+            }, false);
+        </script>
+        <style media="screen">
+            #nota {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20vw;
+                color:lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <i class="fas fa-music" id="nota"></i>
+    </body>
+</html>
